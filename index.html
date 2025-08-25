@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter Tool - Free Online Character & Text Counter | WordCounter Pro</title>
+    <meta name="description" content="Free online word counter tool. Count words, characters, sentences, paragraphs instantly. Perfect for writers, students & SEO. Real-time analysis, reading time & keyword density.">
+    <meta name="keywords" content="word counter, character counter, text counter, word count tool, online counter, text analysis, writing tools, SEO counter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="WordCounter Pro">
+    <link rel="canonical" href="https://wordcounter.pro">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Word Counter Tool - Free Online Character & Text Counter">
+    <meta property="og:description" content="Free online word counter tool. Count words, characters, sentences instantly. Perfect for writers, students & SEO professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wordcounter.pro">
+    <meta property="og:image" content="https://wordcounter.pro/og-image.jpg">
+    <meta property="og:site_name" content="WordCounter Pro">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Word Counter Tool - Free Online Character & Text Counter">
+    <meta name="twitter:description" content="Free online word counter tool. Count words, characters, sentences instantly. Perfect for writers & SEO.">
+    <meta name="twitter:image" content="https://wordcounter.pro/twitter-image.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "WordCounter Pro",
+        "description": "Free online word counter tool for counting words, characters, sentences, and paragraphs with real-time analysis.",
+        "url": "https://wordcounter.pro",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Word counting",
+            "Character counting", 
+            "Sentence analysis",
+            "Reading time calculation",
+            "Keyword density analysis",
+            "Real-time text analysis"
+        ]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        'github-dark': {
+                            bg: '#0d1117',
+                            'bg-secondary': '#161b22',
+                            'bg-tertiary': '#21262d',
+                            'bg-overlay': '#30363d',
+                            border: '#30363d',
+                            'border-muted': '#21262d',
+                            text: '#f0f6fc',
+                            'text-secondary': '#8b949e',
+                            'text-muted': '#7d8590',
+                            accent: '#2f81f7',
+                            'accent-emphasis': '#1f6feb',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.2s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'scale-in': 'scaleIn 0.2s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-github-dark-bg transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white/95 dark:bg-github-dark-bg-secondary/95 backdrop-blur-sm border-b border-gray-200 dark:border-github-dark-border sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-pencil-alt text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-800 dark:text-white">WordCounter Pro</h1>
+                </div>
+                <div class="flex flex-col lg:flex-row lg:items-center space-y-3 lg:space-y-0 lg:space-x-4">
+                    <!-- Mode Buttons with Descriptions -->
+                    <div class="flex items-center space-x-2 md:space-x-3">
+                        <button id="focus-mode-btn" class="group relative px-3 py-2 rounded-lg bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 text-green-700 dark:text-green-300 transition-colors text-sm font-medium">
+                            <i class="fas fa-crosshairs mr-2"></i>Focus Mode
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-black dark:bg-gray-800 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none z-50 border border-gray-600 dark:border-gray-600">
+                                <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black dark:bg-gray-800 border-l border-t border-gray-600 dark:border-gray-600 rotate-45"></div>
+                                Hide distractions, show only text editor
+                            </div>
+                        </button>
+                        <button id="kill-mode-btn" class="group relative px-3 py-2 rounded-lg bg-red-100 hover:bg-red-200 dark:bg-red-900 dark:hover:bg-red-800 text-red-700 dark:text-red-300 transition-colors text-sm font-medium">
+                            <i class="fas fa-skull mr-2"></i>Kill Mode
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-black dark:bg-gray-800 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none z-50 border border-gray-600 dark:border-gray-600">
+                                <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black dark:bg-gray-800 border-l border-t border-gray-600 dark:border-gray-600 rotate-45"></div>
+                                ⚠️ Delete content if you switch tabs
+                            </div>
+                        </button>
+                        <button id="theme-toggle" class="group relative p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
+                            <i id="theme-icon" class="fas fa-moon text-gray-600 dark:text-gray-300"></i>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-black dark:bg-gray-800 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none z-50 border border-gray-600 dark:border-gray-600">
+                                <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black dark:bg-gray-800 border-l border-t border-gray-600 dark:border-gray-600 rotate-45"></div>
+                                <span class="dark:hidden">🌙 Switch to Dark Mode</span>
+                                <span class="hidden dark:inline">☀️ Switch to Light Mode</span>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <!-- Mode Descriptions (Always Visible) -->
+                    <div class="hidden xl:flex flex-col space-y-1 text-xs text-gray-500 dark:text-gray-400">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                            <span><strong>Focus Mode:</strong> Hide distractions, show only text editor</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                            <span><strong>Kill Mode:</strong> Delete content if you switch tabs or lose focus</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-gray-500 rounded-full mr-2"></div>
+                            <span><strong>Dark Mode:</strong> Toggle between light and dark themes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-2 md:px-4 py-4 md:py-6 max-w-7xl">
+        <!-- Quick Stats Above Text Area -->
+        <div class="w-full max-w-5xl mx-auto mb-4">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                        <i class="fas fa-chart-line mr-2 text-primary-500"></i>
+                        Quick Stats
+                    </h3>
+                </div>
+                <div class="p-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <!-- Words -->
+                        <div class="text-center p-3 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg border border-blue-200/50 dark:border-blue-800/30">
+                            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="top-word-count">0</div>
+                            <div class="text-xs font-medium text-blue-600 dark:text-blue-400">Words</div>
+                        </div>
+                        
+                        <!-- Characters -->
+                        <div class="text-center p-3 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg border border-green-200/50 dark:border-green-800/30">
+                            <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="top-char-count">0</div>
+                            <div class="text-xs font-medium text-green-600 dark:text-green-400">Characters</div>
+                        </div>
+                        
+                        <!-- Characters No Spaces -->
+                        <div class="text-center p-3 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg border border-purple-200/50 dark:border-purple-800/30">
+                            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="top-char-no-spaces">0</div>
+                            <div class="text-xs font-medium text-purple-600 dark:text-purple-400">No Spaces</div>
+                        </div>
+                        
+                        <!-- Sentences -->
+                        <div class="text-center p-3 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-lg border border-orange-200/50 dark:border-orange-800/30">
+                            <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="top-sentence-count">0</div>
+                            <div class="text-xs font-medium text-orange-600 dark:text-orange-400">Sentences</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Quick Metrics Row -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+                        <!-- Reading Time -->
+                        <div class="text-center p-3 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-lg border border-cyan-200/50 dark:border-cyan-800/30">
+                            <div class="text-lg font-bold text-cyan-600 dark:text-cyan-400" id="top-reading-time">0 min</div>
+                            <div class="text-xs font-medium text-cyan-600 dark:text-cyan-400">Reading Time</div>
+                        </div>
+                        
+                        <!-- Paragraphs -->
+                        <div class="text-center p-3 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-lg border border-pink-200/50 dark:border-pink-800/30">
+                            <div class="text-lg font-bold text-pink-600 dark:text-pink-400" id="top-paragraph-count">0</div>
+                            <div class="text-xs font-medium text-pink-600 dark:text-pink-400">Paragraphs</div>
+                        </div>
+                        
+                        <!-- AI Tokens -->
+                        <div class="text-center p-3 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 rounded-lg border border-indigo-200/50 dark:border-indigo-800/30">
+                            <div class="text-lg font-bold text-indigo-600 dark:text-indigo-400" id="top-token-count">0</div>
+                            <div class="text-xs font-medium text-indigo-600 dark:text-indigo-400">AI Tokens</div>
+                        </div>
+                        
+                        <!-- Reading Level -->
+                        <div class="text-center p-3 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-lg border border-emerald-200/50 dark:border-emerald-800/30">
+                            <div class="text-lg font-bold text-emerald-600 dark:text-emerald-400" id="top-reading-level">0</div>
+                            <div class="text-xs font-medium text-emerald-600 dark:text-emerald-400">Grade Level</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Input Section (Full Width) -->
+        <div class="w-full max-w-5xl mx-auto mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                                <i class="fas fa-edit mr-2 text-primary-500"></i>
+                                Text Editor
+                            </h2>
+                            <div class="flex flex-wrap gap-1 md:gap-2">
+                                <button id="clear-btn" class="px-2 py-1 text-xs bg-red-100 hover:bg-red-200 dark:bg-red-900 dark:hover:bg-red-800 text-red-700 dark:text-red-300 rounded-lg transition-colors" title="Clear all text">
+                                    <i class="fas fa-trash mr-1"></i>Clear
+                                </button>
+                                <button id="undo-btn" class="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-colors" title="Undo">
+                                    <i class="fas fa-undo mr-1"></i>Undo
+                                </button>
+                                <button id="redo-btn" class="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-colors" title="Redo">
+                                    <i class="fas fa-redo mr-1"></i>Redo
+                                </button>
+                                <button id="copy-btn" class="px-2 py-1 text-xs bg-primary-100 hover:bg-primary-200 dark:bg-primary-900 dark:hover:bg-primary-800 text-primary-700 dark:text-primary-300 rounded-lg transition-colors" title="Copy text">
+                                    <i class="fas fa-copy mr-1"></i>Copy
+                                </button>
+                                <div class="relative">
+                                    <button id="case-btn" class="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 text-blue-700 dark:text-blue-300 rounded-lg transition-colors flex items-center" title="Change case">
+                                        <i class="fas fa-font mr-1"></i>Case <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                    </button>
+                                    <div id="case-dropdown" class="absolute top-8 left-0 bg-white dark:bg-github-dark-bg-secondary border border-gray-200 dark:border-github-dark-border rounded-lg shadow-lg z-50 min-w-[140px] hidden">
+                                        <div class="py-1">
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="lowercase">
+                                                lowercase
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="UPPERCASE">
+                                                UPPERCASE
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="Title Case">
+                                                Title Case
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="Sentence case">
+                                                Sentence case
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="camelCase">
+                                                camelCase
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="kebab-case">
+                                                kebab-case
+                                            </button>
+                                            <button class="case-option w-full text-left px-3 py-2 text-xs hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary text-gray-700 dark:text-github-dark-text" data-case="snake_case">
+                                                snake_case
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="find-replace-btn" class="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 text-green-700 dark:text-green-300 rounded-lg transition-colors" title="Find & Replace">
+                                    <i class="fas fa-search mr-1"></i>Find
+                                </button>
+                                <button id="clean-text-btn" class="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 dark:bg-purple-900 dark:hover:bg-purple-800 text-purple-700 dark:text-purple-300 rounded-lg transition-colors" title="Clean text">
+                                    <i class="fas fa-broom mr-1"></i>Clean
+                                </button>
+                                <button id="goal-btn" class="px-2 py-1 text-xs bg-yellow-100 hover:bg-yellow-200 dark:bg-yellow-900 dark:hover:bg-yellow-800 text-yellow-700 dark:text-yellow-300 rounded-lg transition-colors" title="Set goal">
+                                    <i class="fas fa-bullseye mr-1"></i>Goal
+                                </button>
+                                <button id="upload-btn" class="px-2 py-1 text-xs bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900 dark:hover:bg-indigo-800 text-indigo-700 dark:text-indigo-300 rounded-lg transition-colors" title="Upload document">
+                                    <i class="fas fa-upload mr-1"></i>Upload
+                                </button>
+                                <button id="download-btn" class="px-2 py-1 text-xs bg-pink-100 hover:bg-pink-200 dark:bg-pink-900 dark:hover:bg-pink-800 text-pink-700 dark:text-pink-300 rounded-lg transition-colors" title="Download document">
+                                    <i class="fas fa-download mr-1"></i>Download
+                                </button>
+                                <button id="save-btn" class="px-2 py-1 text-xs bg-teal-100 hover:bg-teal-200 dark:bg-teal-900 dark:hover:bg-teal-800 text-teal-700 dark:text-teal-300 rounded-lg transition-colors" title="Save document">
+                                    <i class="fas fa-save mr-1"></i>Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <textarea 
+                            id="text-input" 
+                            placeholder="Start typing or paste your text here to analyze..."
+                            class="w-full h-96 p-4 border-0 resize-none focus:outline-none bg-transparent text-gray-800 dark:text-gray-200 text-base leading-relaxed"
+                            spellcheck="true"
+                        ></textarea>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Statistics Grid Below Writing Area -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+                <!-- Quick Stats -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                            <i class="fas fa-chart-line mr-2 text-primary-500"></i>
+                            Quick Stats
+                        </h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-3 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="word-count">0</div>
+                                <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">Words</div>
+                            </div>
+                            <div class="text-center p-3 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg">
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="char-count">0</div>
+                                <div class="text-xs text-green-600 dark:text-green-400 font-medium">Characters</div>
+                            </div>
+                            <div class="text-center p-3 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="char-no-spaces">0</div>
+                                <div class="text-xs text-purple-600 dark:text-purple-400 font-medium">No Spaces</div>
+                            </div>
+                            <div class="text-center p-3 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-lg">
+                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="sentence-count">0</div>
+                                <div class="text-xs text-orange-600 dark:text-orange-400 font-medium">Sentences</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Token Estimation Block -->
+                        <div class="mt-4 p-4 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-lg border border-cyan-200 dark:border-cyan-800/30">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-robot text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-cyan-600 dark:text-cyan-400" id="main-token-count">0</div>
+                                        <div class="text-xs text-cyan-600 dark:text-cyan-400 font-medium">Estimated Tokens</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-semibold text-cyan-700 dark:text-cyan-300" id="main-token-ratio">~0 words/token</div>
+                                    <div class="text-xs text-cyan-500 dark:text-cyan-400">OpenAI Formula</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-cyan-200 dark:border-cyan-700/50">
+                                <div class="flex justify-between text-xs text-cyan-600 dark:text-cyan-400">
+                                    <span>Characters ÷ 4: <span id="char-method-tokens" class="font-medium">0</span></span>
+                                    <span>Words × 1.33: <span id="word-method-tokens" class="font-medium">0</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media Limits -->
+                        <div class="mt-4 p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg border border-purple-200 dark:border-purple-800/30">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-share-alt text-white text-sm"></i>
+                                </div>
+                                <h4 class="text-base font-bold text-purple-700 dark:text-purple-300">Social Media Limits</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Facebook Post -->
+                                <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg p-4 border border-purple-200/70 dark:border-purple-700/50 shadow-sm">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <i class="fab fa-facebook text-blue-600 dark:text-blue-400 text-lg mr-3"></i>
+                                            <span class="font-semibold text-blue-600 dark:text-blue-400">FACEBOOK</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 rounded-full mr-2" id="facebook-indicator"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-2xl font-bold text-gray-800 dark:text-gray-200" id="facebook-chars">0</div>
+                                        <div class="text-right">
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">/ 63,206</div>
+                                            <div class="text-xs text-gray-500 dark:text-gray-500">characters</div>
+                                        </div>
+                                    </div>
+                                    <!-- Progress Bar -->
+                                    <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div class="h-2 rounded-full bg-blue-500 transition-all duration-300" style="width: 0%" id="facebook-progress"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Twitter Post -->
+                                <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg p-4 border border-purple-200/70 dark:border-purple-700/50 shadow-sm">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <i class="fab fa-twitter text-sky-600 dark:text-sky-400 text-lg mr-3"></i>
+                                            <span class="font-semibold text-sky-600 dark:text-sky-400">TWITTER</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 rounded-full mr-2" id="twitter-indicator"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-2xl font-bold text-gray-800 dark:text-gray-200" id="twitter-chars">0</div>
+                                        <div class="text-right">
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">/ 280</div>
+                                            <div class="text-xs text-gray-500 dark:text-gray-500">characters</div>
+                                        </div>
+                                    </div>
+                                    <!-- Progress Bar -->
+                                    <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div class="h-2 rounded-full bg-sky-500 transition-all duration-300" style="width: 0%" id="twitter-progress"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Instagram Post -->
+                                <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg p-4 border border-purple-200/70 dark:border-purple-700/50 shadow-sm">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <i class="fab fa-instagram text-pink-600 dark:text-pink-400 text-lg mr-3"></i>
+                                            <span class="font-semibold text-pink-600 dark:text-pink-400">INSTAGRAM</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 rounded-full mr-2" id="instagram-indicator"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-2xl font-bold text-gray-800 dark:text-gray-200" id="instagram-chars">0</div>
+                                        <div class="text-right">
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">/ 2,200</div>
+                                            <div class="text-xs text-gray-500 dark:text-gray-500">characters</div>
+                                        </div>
+                                    </div>
+                                    <!-- Progress Bar -->
+                                    <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div class="h-2 rounded-full bg-pink-500 transition-all duration-300" style="width: 0%" id="instagram-progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Stats -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                            <i class="fas fa-info-circle mr-2 text-primary-500"></i>
+                            Detailed Analysis
+                        </h3>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Paragraphs</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="paragraph-count">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Lines</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="line-count">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Pages</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="page-count">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Syllables</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="syllable-count">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Reading Time</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="reading-time">0 min</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Speaking Time</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="speaking-time">0 min</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Handwriting Time</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="handwriting-time">0 min</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Avg Words/Sentence</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="avg-words-sentence">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Avg Sentence (chars)</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="avg-sentence-chars">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Avg Word Length</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="avg-word-length">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Longest Sentence</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="longest-sentence">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Shortest Sentence</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="shortest-sentence">0</span>
+                        </div>
+                        <div class="py-2 border-b border-gray-100 dark:border-gray-700">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Reading Level</span>
+                                <div class="text-right">
+                                    <div class="font-semibold text-gray-800 dark:text-gray-200" id="reading-level">-</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400" id="reading-level-desc">-</div>
+                                </div>
+                            </div>
+                            <div class="space-y-1 text-xs">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 dark:text-gray-400">Flesch-Kincaid:</span>
+                                    <span class="font-medium text-gray-700 dark:text-gray-300" id="flesch-kincaid">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 dark:text-gray-400">Gunning Fog:</span>
+                                    <span class="font-medium text-gray-700 dark:text-gray-300" id="gunning-fog">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 dark:text-gray-400">SMOG Index:</span>
+                                    <span class="font-medium text-gray-700 dark:text-gray-300" id="smog-index">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500 dark:text-gray-400">ARI:</span>
+                                    <span class="font-medium text-gray-700 dark:text-gray-300" id="ari-index">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Unique Words</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="unique-words">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Estimated Tokens</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="token-count">0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Words per Token</span>
+                            <span class="font-semibold text-gray-800 dark:text-gray-200" id="words-per-token">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keyword Density -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                            <i class="fas fa-search mr-2 text-primary-500"></i>
+                            Top Keywords
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div id="keyword-density" class="space-y-2">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
+                                Start typing to see keyword analysis
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options Panel -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                            <i class="fas fa-cogs mr-2 text-primary-500"></i>
+                            Options
+                        </h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-100 dark:border-gray-700 pb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">General</h4>
+                                <div class="space-y-2">
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-600 dark:text-gray-400">Auto-save (Instant)</span>
+                                        <input type="checkbox" id="auto-save" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-600 dark:text-gray-400">Activity Tracking</span>
+                                        <input type="checkbox" id="activity-tracking" class="rounded" checked>
+                                    </label>
+                                </div>
+                                
+                                <!-- Last Saved Indicator -->
+                                <div class="mt-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+                                    <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                                        <span class="flex items-center">
+                                            <i class="fas fa-clock mr-1"></i>Last saved:
+                                        </span>
+                                        <span id="last-saved-time" class="font-mono text-xs">Never</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-b border-gray-100 dark:border-gray-700 pb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Details Panel</h4>
+                                <div class="space-y-2 max-h-32 overflow-y-auto">
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Characters</span>
+                                        <input type="checkbox" id="show-chars" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Characters (no spaces)</span>
+                                        <input type="checkbox" id="show-chars-no-spaces" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Words</span>
+                                        <input type="checkbox" id="show-words" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Sentences</span>
+                                        <input type="checkbox" id="show-sentences" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Paragraphs</span>
+                                        <input type="checkbox" id="show-paragraphs" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Reading Time</span>
+                                        <input type="checkbox" id="show-reading-time" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Lines</span>
+                                        <input type="checkbox" id="show-lines" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Pages</span>
+                                        <input type="checkbox" id="show-pages" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Token Estimation</span>
+                                        <input type="checkbox" id="show-tokens" class="rounded" checked>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="border-b border-gray-100 dark:border-gray-700 pb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Token Estimation</h4>
+                                <div class="space-y-2">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
+                                        <div class="flex items-start space-x-2">
+                                            <i class="fas fa-info-circle text-blue-600 dark:text-blue-400 mt-0.5 text-xs"></i>
+                                            <div class="text-xs text-blue-800 dark:text-blue-200">
+                                                <p class="font-medium mb-1">Using OpenAI's Formula:</p>
+                                                <p>• Characters ÷ 4 (1 token ≈ 4 characters)</p>
+                                                <p>• Words × 1.33 (1 token ≈ ¾ of a word)</p>
+                                                <p class="mt-1 text-blue-700 dark:text-blue-300">
+                                                    For precise counts, use <a href="https://platform.openai.com/tokenizer" target="_blank" class="underline hover:text-blue-900 dark:hover:text-blue-100">OpenAI's tokenizer tool</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-2">
+                                        <p class="text-xs text-yellow-800 dark:text-yellow-200">
+                                            <i class="fas fa-exclamation-triangle mr-1"></i>
+                                            Estimates vary between providers (GPT, Claude, etc.) and languages
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Buttons</h4>
+                                <div class="space-y-2 max-h-32 overflow-y-auto">
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Clear Button</span>
+                                        <input type="checkbox" id="show-clear-btn" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Save Button</span>
+                                        <input type="checkbox" id="show-save-btn" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Download Button</span>
+                                        <input type="checkbox" id="show-download-btn" class="rounded" checked>
+                                    </label>
+                                    <label class="flex items-center justify-between">
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Upload Button</span>
+                                        <input type="checkbox" id="show-upload-btn" class="rounded" checked>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <!-- Modals -->
+        <div id="find-replace-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 w-96">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Find and Replace</h3>
+                <div class="space-y-4">
+                    <input type="text" id="find-input" placeholder="Find..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                    <input type="text" id="replace-input" placeholder="Replace with..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                    <div class="flex space-x-2">
+                        <button id="find-btn" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg">Find</button>
+                        <button id="replace-btn" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg">Replace</button>
+                        <button id="replace-all-btn" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">Replace All</button>
+                        <button id="close-find-modal" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="goal-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 w-96">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Set Writing Goal</h3>
+                <div class="space-y-4">
+                    <select id="goal-type" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                        <option value="words">Words</option>
+                        <option value="characters">Characters</option>
+                        <option value="time">Time (minutes)</option>
+                    </select>
+                    <input type="number" id="goal-value" placeholder="Enter goal..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                    <div class="flex space-x-2">
+                        <button id="set-goal-btn" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg">Set Goal</button>
+                        <button id="close-goal-modal" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg">Close</button>
+                    </div>
+                    <div id="goal-progress" class="hidden">
+                        <div class="mt-4 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Progress</span>
+                                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200" id="goal-progress-text">0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                                <div class="bg-primary-500 h-2 rounded-full transition-all duration-300" style="width: 0%" id="goal-progress-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="file" id="file-input" accept=".txt,.doc,.docx,.pdf,.odt" style="display: none;">
+
+        <!-- Floating Goal Progress Widget -->
+        <div id="floating-goal-widget" class="fixed bottom-6 right-6 z-50 hidden animate-slide-up">
+            <div class="bg-white dark:bg-github-dark-bg-secondary rounded-xl shadow-2xl border border-gray-200 dark:border-github-dark-border p-4 min-w-[280px] max-w-[320px]">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full animate-pulse"></div>
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-github-dark-text">Writing Goal</h4>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <button id="minimize-goal-widget" class="p-1 rounded-md hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary transition-colors" title="Minimize">
+                            <i class="fas fa-minus text-xs text-gray-500 dark:text-github-dark-text-muted"></i>
+                        </button>
+                        <button id="close-goal-widget" class="p-1 rounded-md hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary transition-colors" title="Close Goal">
+                            <i class="fas fa-times text-xs text-gray-500 dark:text-github-dark-text-muted"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="goal-details">
+                    <div class="mb-2">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-600 dark:text-github-dark-text-secondary" id="floating-goal-type">Goal Type</span>
+                            <span class="font-medium text-gray-800 dark:text-github-dark-text" id="floating-goal-target">0 words</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-gray-500 dark:text-github-dark-text-muted">Progress</span>
+                            <span class="text-xs font-semibold" id="floating-goal-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-github-dark-bg-tertiary rounded-full h-2 overflow-hidden">
+                            <div class="h-2 rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-primary-400 to-primary-600" style="width: 0%" id="floating-goal-progress-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-gray-500 dark:text-github-dark-text-muted">Current: <span id="floating-goal-current" class="font-medium">0</span></span>
+                        <span class="text-gray-500 dark:text-github-dark-text-muted">Target: <span id="floating-goal-value" class="font-medium">0</span></span>
+                    </div>
+                    
+                    <div class="mt-2 pt-2 border-t border-gray-100 dark:border-github-dark-border">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-400 dark:text-github-dark-text-muted">Remaining:</span>
+                            <span id="floating-goal-remaining" class="font-medium text-primary-600 dark:text-github-dark-accent">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minimized state -->
+                <div id="goal-minimized" class="hidden">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"></div>
+                            <span class="text-xs font-medium text-gray-700 dark:text-github-dark-text" id="minimized-goal-text">Goal: 0%</span>
+                        </div>
+                        <button id="expand-goal-widget" class="p-1 rounded-md hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary transition-colors" title="Expand">
+                            <i class="fas fa-chevron-up text-xs text-gray-500 dark:text-github-dark-text-muted"></i>
+                        </button>
+                    </div>
+                    <div class="mt-2">
+                        <div class="w-full bg-gray-200 dark:bg-github-dark-bg-tertiary rounded-full h-1">
+                            <div class="h-1 rounded-full transition-all duration-500 bg-gradient-to-r from-primary-400 to-primary-600" style="width: 0%" id="minimized-goal-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Tools Section -->
+        <div class="mt-12">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Writing Tools & Features</h2>
+                <p class="text-gray-600 dark:text-gray-400">Professional writing analysis at your fingertips</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-spell-check text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Real-time Analysis</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Instant word, character, and sentence counting as you type</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Reading Time</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Accurate reading time estimation based on average reading speed</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Keyword Density</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Analyze keyword frequency and density for SEO optimization</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-moon text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Dark Mode</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Eye-friendly dark theme for comfortable writing sessions</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Focus Mode Modal -->
+    <div id="focus-mode-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-github-dark-bg-secondary rounded-xl shadow-2xl border border-gray-200 dark:border-github-dark-border p-6 max-w-md w-full mx-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                    <i class="fas fa-crosshairs text-green-500 mr-2"></i>Focus Mode
+                </h3>
+                <button id="close-focus-modal" class="p-1 hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary rounded">
+                    <i class="fas fa-times text-gray-500"></i>
+                </button>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Focus mode will minimize distractions and help you concentrate on writing.</p>
+            <div class="flex justify-end space-x-3">
+                <button id="cancel-focus" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary rounded-lg transition-colors">Cancel</button>
+                <button id="start-focus" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors">Start Focus</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kill Mode Modal -->
+    <div id="kill-mode-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-github-dark-bg-secondary rounded-xl shadow-2xl border border-gray-200 dark:border-github-dark-border p-6 max-w-md w-full mx-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+                    <i class="fas fa-skull text-red-500 mr-2"></i>Kill Mode
+                </h3>
+                <button id="close-kill-modal" class="p-1 hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary rounded">
+                    <i class="fas fa-times text-gray-500"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <p class="text-gray-600 dark:text-gray-400 mb-3">⚠️ <strong>Warning:</strong> Kill mode will delete all your content if you switch tabs or get distracted!</p>
+                <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-3">
+                    <div class="flex items-start space-x-2">
+                        <i class="fas fa-exclamation-triangle text-red-500 mt-0.5"></i>
+                        <div class="text-sm text-red-700 dark:text-red-400">
+                            <p class="font-medium mb-1">This will destroy your content if you:</p>
+                            <ul class="list-disc list-inside space-y-0.5">
+                                <li>Switch to another tab</li>
+                                <li>Switch to another window</li>
+                                <li>Leave this page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end space-x-3">
+                <button id="cancel-kill" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-github-dark-bg-tertiary rounded-lg transition-colors">Cancel</button>
+                <button id="start-kill" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors">I Understand, Start Kill Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Focus Mode Exit Button -->
+    <div id="focus-mode-exit-btn" class="fixed top-4 right-4 z-50 hidden">
+        <button id="exit-focus" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-lg transition-colors flex items-center space-x-2">
+            <i class="fas fa-times"></i>
+            <span>Exit Focus Mode</span>
+        </button>
+    </div>
+
+    <!-- Kill Mode Active Indicator -->
+    <div id="kill-mode-indicator" class="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50 hidden animate-pulse">
+        <div class="flex items-center justify-center space-x-2">
+            <i class="fas fa-skull"></i>
+            <span class="font-bold">KILL MODE ACTIVE</span>
+            <i class="fas fa-skull"></i>
+            <span class="ml-4">|</span>
+            <button id="exit-kill" class="ml-4 px-3 py-1 bg-red-700 hover:bg-red-800 rounded text-sm transition-colors">Exit Kill Mode</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- What is WordCounter Section -->
+    <section class="bg-gray-50 dark:bg-gray-900 py-16 mt-16" id="what-is-wordcounter">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">What is WordCounter?</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Professional text analysis tool for writers, students, and content creators</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border border-gray-200 dark:border-gray-700">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                    <strong>WordCounter Pro</strong> is a comprehensive <em>online word counter tool</em> that goes beyond simple word counting. Our advanced text analysis platform helps you count words, characters, sentences, and paragraphs while providing valuable insights into your content's readability, keyword density, and reading time.
+                </p>
+                
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                    Perfect for <span class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded text-blue-800 dark:text-blue-200">writers</span>, <span class="bg-green-100 dark:bg-green-900 px-2 py-1 rounded text-green-800 dark:text-green-200">students</span>, <span class="bg-purple-100 dark:bg-purple-900 px-2 py-1 rounded text-purple-800 dark:text-purple-200">bloggers</span>, and <span class="bg-orange-100 dark:bg-orange-900 px-2 py-1 rounded text-orange-800 dark:text-orange-200">SEO professionals</span>, our tool provides real-time text analysis as you type. The auto-save feature ensures you never lose your work, even if you accidentally close the browser.
+                </p>
+            </div>
+            
+            <!-- Key Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calculator text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Accurate Counting</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Precise word and character counting with real-time updates as you type or edit your content.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Reading Time</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Calculate estimated reading and speaking time based on average reading speeds for better content planning.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-search text-purple-600 dark:text-purple-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">SEO Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Keyword density analysis and readability scores to optimize your content for search engines.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-orange-600 dark:text-orange-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Reading Level</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Advanced readability analysis using multiple algorithms to determine content complexity and grade level.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-share-alt text-red-600 dark:text-red-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Social Media</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Character limits for Facebook, Twitter, and Instagram to optimize posts for each platform.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-cyan-600 dark:text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">AI Token Count</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Estimate AI tokens for ChatGPT, Claude, and other LLMs using industry-standard formulas.</p>
+                </div>
+            </div>
+            
+            <!-- Why Choose WordCounter -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-8 border border-blue-200 dark:border-blue-800">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Why Choose WordCounter Pro?</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>100% Free</strong> - No registration required</span>
+                    </li>
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>Real-time Analysis</strong> - Instant results as you type</span>
+                    </li>
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>Privacy Focused</strong> - All processing done locally</span>
+                    </li>
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>Auto-Save</strong> - Never lose your work</span>
+                    </li>
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>Mobile Optimized</strong> - Works on all devices</span>
+                    </li>
+                    <li class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span><strong>Dark Mode</strong> - Comfortable writing experience</span>
+                    </li>
+                </ul>
+                
+                <div class="mt-6 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-blue-200 dark:border-blue-700">
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <strong>Pro Tip:</strong> Bookmark this page now for instant access to the most comprehensive word counter tool online. Perfect for essays, articles, social media posts, and professional content creation.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <details class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600 dark:hover:text-blue-400">
+                            How accurate is the word counter?
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
+                            Our word counter uses advanced algorithms to provide 99.9% accurate word and character counting. It properly handles contractions, hyphenated words, and various text formats while following industry-standard counting methods.
+                        </p>
+                    </details>
+                    
+                    <details class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600 dark:hover:text-blue-400">
+                            Is my text data secure and private?
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
+                            Yes, absolutely! All text analysis is performed locally in your browser. We don't store, transmit, or access your content. Your privacy is our top priority, and your text never leaves your device.
+                        </p>
+                    </details>
+                    
+                    <details class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                        <summary class="font-semibold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600 dark:hover:text-blue-400">
+                            Can I use this for SEO content optimization?
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
+                            Definitely! WordCounter Pro includes keyword density analysis, readability scores, and optimal word count guidelines for different content types. It's perfect for creating SEO-optimized blog posts, articles, and web content.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    © 2024 WordCounter Pro. Free online writing tool for professionals and students.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-500 dark:text-gray-500 mb-4">
+                    <span>✨ No registration required</span>
+                    <span>🔒 Privacy focused</span>
+                    <span>⚡ Lightning fast</span>
+                    <span>📱 Mobile optimized</span>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                    Developed by <a href="https://nafran.com" target="_blank" rel="noopener noreferrer" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Nafran.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
