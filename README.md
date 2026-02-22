@@ -1,145 +1,100 @@
-# WordCounter Pro
+<div align="center">
 
-🚀 **Professional Word Counter Tool** - Free online text analysis with advanced features for writers, students, and content creators.
+# counter.nafran.com
 
-## ✨ Features
+**Word counter & text analysis for writers, students, and creators.**
 
-### 📊 **Real-Time Analysis**
-- **Word Count** - Accurate word counting with real-time updates
-- **Character Count** - Total characters with and without spaces
-- **Sentence & Paragraph Analysis** - Comprehensive text structure analysis
-- **Reading Time** - Estimated reading and speaking time calculations
-- **AI Token Estimation** - OpenAI token counting for LLM usage
+[![Live](https://img.shields.io/badge/live-counter.nafran.com-blue?style=flat-square)](https://counter.nafran.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### 🎯 **Advanced Tools**
-- **Reading Level Analysis** - Multiple algorithms (Flesch-Kincaid, Gunning Fog, SMOG, ARI)
-- **Keyword Density** - SEO optimization with top keywords analysis
-- **Social Media Limits** - Character limits for Facebook, Twitter, Instagram
-- **Goal Setting** - Set writing goals with progress tracking
-- **Focus Mode** - Distraction-free writing environment
-- **Kill Mode** - Extreme productivity tool that deletes content if you lose focus
+<br />
 
-### 🛠️ **Writing Tools**
-- **Find & Replace** - Advanced text search and replacement
-- **Case Transformation** - 7 different case options (lowercase, UPPERCASE, Title Case, etc.)
-- **Text Cleaning** - Remove extra whitespace and normalize formatting
-- **File Operations** - Upload text files, download content
-- **Auto-Save** - Instant auto-save with local storage
+Real-time word counting, readability analysis, keyword density, AI token estimation, and productivity tools. Runs entirely in your browser — your text never leaves your device.
 
-### 🎨 **User Experience**
-- **Dark Mode** - Professional GitHub-style dark theme
-- **Mobile Responsive** - Optimized for all devices
-- **Instant Updates** - Real-time analysis as you type
-- **Privacy Focused** - All processing done locally in your browser
-- **No Registration** - Start using immediately
+<br />
 
-## 🚀 **Live Demo**
+[Try it live](https://counter.nafran.com) · [Features](#features) · [Self-host](#self-hosting)
 
-Visit the live application: [WordCounter Pro](https://your-username.github.io/wordcounter-pro)
-
-## 🖥️ **Screenshots**
-
-### Light Mode
-![WordCounter Pro Light Mode](https://via.placeholder.com/800x600/f8fafc/374151?text=WordCounter+Pro+Light+Mode)
-
-### Dark Mode  
-![WordCounter Pro Dark Mode](https://via.placeholder.com/800x600/0d1117/f0f6fc?text=WordCounter+Pro+Dark+Mode)
-
-### Focus Mode
-![Focus Mode](https://via.placeholder.com/800x600/f0f9ff/1e40af?text=Focus+Mode+Active)
-
-## 🛠️ **Technology Stack**
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: Tailwind CSS
-- **Icons**: Font Awesome
-- **Analytics**: Multiple readability algorithms
-- **Storage**: Browser LocalStorage
-- **Deployment**: GitHub Pages
-
-## 📱 **Browser Support**
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🚀 **Quick Start**
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/wordcounter-pro.git
-   ```
-
-2. **Open the project**
-   ```bash
-   cd wordcounter-pro
-   ```
-
-3. **Launch locally**
-   - Open `index.html` in your browser
-   - Or use a local server: `python -m http.server 8000`
-
-## 📖 **Usage Guide**
-
-### Basic Usage
-1. **Start typing** in the text editor - all metrics update in real-time
-2. **View quick stats** above the editor for instant feedback
-3. **Check detailed analysis** below for comprehensive insights
-
-### Advanced Features
-- **Set Goals**: Click the Goal button to set word/character targets
-- **Focus Mode**: Click Focus Mode for distraction-free writing
-- **Kill Mode**: Activate for extreme productivity (deletes content if you lose focus)
-- **Dark Mode**: Toggle between light and dark themes
-
-### File Operations
-- **Upload**: Support for .txt, .doc, .docx files
-- **Download**: Save your work as .txt file
-- **Auto-Save**: Content automatically saved to browser storage
-
-## 🎯 **SEO Features**
-
-- **Optimal Word Count** recommendations for different content types
-- **Keyword Density** analysis for SEO optimization
-- **Readability Scores** using industry-standard algorithms
-- **Social Media** character limits for platform optimization
-
-## 🔒 **Privacy & Security**
-
-- **Local Processing** - All analysis happens in your browser
-- **No Data Transmission** - Your content never leaves your device
-- **No Tracking** - Privacy-focused design
-- **Open Source** - Full transparency
-
-## 🤝 **Contributing**
-
-We welcome contributions! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 **Developer**
-
-Developed by **[Nafran.com](https://nafran.com)**
-
-## 🌟 **Support**
-
-If you find this project helpful, please give it a ⭐ star on GitHub!
-
-## 📞 **Contact**
-
-- Website: [Nafran.com](https://nafran.com)
-- Issues: [GitHub Issues](https://github.com/your-username/wordcounter-pro/issues)
+</div>
 
 ---
 
-**WordCounter Pro** - Making writing and content creation more efficient and data-driven! ✍️📊
+## Features
+
+### Text Analysis
+- **Word & character count** — real-time updates as you type
+- **Sentence & paragraph count** — full structural breakdown
+- **Reading & speaking time** — estimated durations
+- **AI token estimation** — approximate OpenAI token count for LLM usage
+
+### Readability
+- **Flesch-Kincaid** grade level and reading ease
+- **Gunning Fog Index** — text complexity score
+- **SMOG Index** — years of education needed to understand
+- **Automated Readability Index (ARI)** — character-based formula
+
+### SEO & Social
+- **Keyword density** — top keywords with frequency analysis
+- **Social media limits** — character counts for Twitter, Facebook, Instagram
+- **Optimal word count** — recommendations by content type
+
+### Productivity
+- **Focus Mode** — distraction-free writing environment
+- **Kill Mode** — deletes your content if you stop typing (extreme productivity)
+- **Goal setting** — set word/character targets with progress tracking
+- **Auto-save** — content persists in localStorage
+
+### Writing Tools
+- **Find & Replace** — search and replace across your text
+- **Case transformation** — 7 options (lowercase, UPPERCASE, Title Case, etc.)
+- **Text cleaning** — remove extra whitespace, normalize formatting
+- **File upload/download** — import .txt/.doc files, export as .txt
+
+### Privacy
+- **100% client-side** — all processing happens in your browser
+- **No server calls** — your text is never transmitted
+- **No tracking** — no analytics, no cookies
+- **No account** — start using immediately
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Markup | HTML5 |
+| Styling | [Tailwind CSS](https://tailwindcss.com) (CDN) |
+| Logic | Vanilla JavaScript (ES6+) |
+| Icons | [Font Awesome](https://fontawesome.com) 6 |
+| Storage | Browser localStorage |
+| Hosting | [Vercel](https://vercel.com) |
+
+Zero dependencies. No build step. Just HTML, CSS, and JS.
+
+## Self-Hosting
+
+```bash
+git clone https://github.com/aamirmursleen/wordcounter2.git
+cd wordcounter2
+
+# Option 1: Open directly
+open index.html
+
+# Option 2: Local server
+python -m http.server 8000
+```
+
+Deploy anywhere that serves static files — Vercel, Netlify, GitHub Pages, Cloudflare Pages, or any web server.
+
+## Project Structure
+
+```
+wordcounter2/
+├── index.html      # Main page with full SEO meta tags
+├── script.js       # All application logic (WordCounter class)
+├── _headers        # Security & caching headers
+└── _redirects      # URL redirects
+```
+
+## License
+
+[MIT](LICENSE)
